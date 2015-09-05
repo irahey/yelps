@@ -1,0 +1,20 @@
+<%= form_for [@restaurant, @reviews] do |form| %>
+
+<%= form.label :name, 'Name' %>
+<%= form.text_field :name %>
+
+<br>
+<hr>
+
+<%= form.label :body, 'Review' %>
+<%= form.text_area :body %>
+
+<br>
+<hr>
+
+<%= form.label :ratings, 'Rating' %>
+<%= form.select :ratings, options_for_select(1..5) %>
+
+<%= form.submit 'Update' %>
+
+<% end %>

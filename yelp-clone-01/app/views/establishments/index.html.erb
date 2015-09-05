@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>YELP DEMO</h1>
+
+
+<br/>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>City</th>
+      <th>Province</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @establishments.each do |establishment| %>
+      <tr>
+        <td><%= establishment.name %></td>
+        <td><%= establishment.city %></td>
+        <td><%= establishment.province %></td>
+        <td><%= link_to 'Show', establishment %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Establishment', new_establishment_path %>

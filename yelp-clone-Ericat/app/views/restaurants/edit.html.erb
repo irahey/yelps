@@ -1,0 +1,44 @@
+<%= form_for @restaurant do |form| %>
+
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <br>
+  <hr>
+
+  <%= form.label :description %>
+  <%= form.text_field :description %>
+
+  <br>
+  <hr>
+
+  <%= form.label :image_url %>
+  <%= form.text_field :image_url %>
+
+  <br>
+  <hr>
+
+  <%= form.label :postcode %>
+  <%= form.text_field :postcode %>
+
+  <br>
+  <hr>
+
+  <%= form.label :address %>
+  <%= form.text_field :address %>
+
+  <br>
+  <hr>
+
+  <%= form.label :tube %>
+  <%= form.text_field :tube %>
+  
+  <br>
+  <hr>
+
+  <%= form.label :promoted %>
+  <%= form.check_box :promoted %>
+
+  <%= form.submit 'Update' %>
+
+<% end %>

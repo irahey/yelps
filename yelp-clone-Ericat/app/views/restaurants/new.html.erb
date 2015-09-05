@@ -1,0 +1,52 @@
+<% if @restaurant.errors.any? %>
+  <div id='error_explanation'>
+    <h2><%= pluralize(@restaurant.errors.count, 'error') %> you cannot save a restaurant because:</h2>
+    <ul>
+      <% @restaurant.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @restaurant do |form| %>
+
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <br>
+  <hr>
+
+  <%= form.label :description %>
+  <%= form.text_field :description %>
+
+  <br>
+  <hr>
+
+  <%= form.label :image_url %>
+  <%= form.text_field :image_url %>
+
+  <br>
+  <hr>
+
+  <%= form.label :postcode %>
+  <%= form.text_field :postcode %>
+
+  <br>
+  <hr>
+
+  <%= form.label :address %>
+  <%= form.text_field :address %>
+
+  <br>
+  <hr>
+
+  <%= form.label :tube %>
+  <%= form.text_field :tube %>
+
+  <br>
+  <hr>
+
+  <button class='btn btn-danger', type="submit">Add restaurant</button>
+
+<% end %>

@@ -1,0 +1,31 @@
+guide: https://github.com/Ericat/yelp-clone
+
+fix-authentication
+    >remove logout when not signed up/logged in yet -OK
+    >remove signup/login if logged in already  -OK
+    >fix 'authenticate method'
+    >fix reviews controller ==> :establishment_tag, :establishment_id
+
+
+helpers-models
+    >helpers
+        .https://github.com/Ericat/yelp-clone/blob/master/app/helpers/reviews_helper.rb
+    >review.rb
+        .https://github.com/Ericat/yelp-clone/blob/master/app/models/review.rb
+
+fix-references
+    >AddEstablishmentIdToReviews
+    >AddCategoryIdToEstablishments
+    >AddUserIdToReviews
+    >dont allow adding new estabs if not admin
+    >dont allow editing and destroying if not own review
+
+add-search
+    >add search button
+
+validations-permissions
+    >add more validations and permissions
+
+*add static-pages?
+*to think about: categories mvc might not be necessary
+

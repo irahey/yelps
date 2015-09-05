@@ -1,0 +1,66 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <img class="avatar" src="<%= @establishment.avatar_url %>">
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @establishment.name %>
+</p>
+
+<p>
+  <strong>Street address:</strong>
+  <%= @establishment.street_address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @establishment.city %>
+</p>
+
+<p>
+  <strong>Province:</strong>
+  <%= @establishment.province %>
+</p>
+
+<p>
+  <strong>Postal code:</strong>
+  <%= @establishment.postal_code %>
+</p>
+
+<%= link_to 'View Map', 'https://www.google.com/maps/place/'+ @establishment.street_address + ", " + @establishment.city + ", " + @establishment.province %>
+<p>
+  <strong>Phone:</strong>
+  <%= @establishment.phone %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= link_to 'Website', @establishment.website %>
+</p>
+
+
+<p>
+  <strong>Description:</strong>
+  <%= @establishment.description %>
+</p>
+
+
+<% @establishment.reviews.each do |review| %>
+  <div>
+    <div> <%= review_color(review) %>
+      <h4>Reviewer: <%= review.user.email %>
+      <p> <%= review.body %> <br />
+        Rating: <%= rating review %></p>
+    </div>
+    <div>
+      <%= link_to 'Edit', edit_establishment_review_path(@establishment, review) %>
+      <%= link_to 'Delete', establishment_review_path(@establishment, review), method: :delete %>
+    </div>
+  </div>
+<% end %>
+
+
+<%= link_to 'Add Reviews', new_review_path(@review) %>
+<%= link_to 'Edit', edit_establishment_path(@establishment) %> |
+<%= link_to 'Back', establishments_path %>

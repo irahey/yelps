@@ -1,0 +1,37 @@
+relationships
+    establishments/category_tag
+        hoteltravel, foodbeverage, professionalservices, artssentertainment
+
+    reviews/user_tag
+        johnsmith, peggysue, mortimergoth
+    
+    reviews/establishment_tag
+        finnegansway, oldtownetrolley, ritecare, margulies, tapelia, southbeachplazavillas
+    
+    user/user_type
+        admin, contributor
+        
+basic-layout
+    >create interface (basic interface only)
+    >fix Login
+    >intregrate reviews
+    >dont allow adding new estabs if not signed up
+    >fix search button
+    
+session-support
+    >added session support
+    >connected user with reviews
+    
+add-photos
+    >Fixed layout in order to show avatars of establishment and user properly
+
+
+relationships03
+    >AddRestaurantIdToReviews
+        >https://github.com/Ericat/yelp-clone/blob/master/db/migrate/20140114112936_add_restaurant_id_to_reviews.rb
+    >AddUserIdToReviews
+        >https://github.com/Ericat/yelp-clone/blob/master/db/migrate/20140115114957_add_user_id_to_reviews.rb
+    >delete establishment_tag, category_tag - OK
+    >note: references created couldn't be verified yet. need to fix authentication first
+    
+    

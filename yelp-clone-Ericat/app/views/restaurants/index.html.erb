@@ -1,0 +1,42 @@
+<% if @restaurants.none? %>
+  No restaurants yet!
+<% end %>
+  <% @restaurants.each do |restaurant| %>
+  <div class='row restaurant'>
+    <div class='col-md-4 restaurant-image' %>
+      <%= image_tag restaurant.image_url %>
+    </div>
+
+    <div class='col-md-8'>
+      <h1><%= link_to restaurant.name, restaurant %></h1>
+      <p><%= restaurant.postcode %>, <%= restaurant.address %>, <%= restaurant.tube %></p>
+  
+      <h5>Created <%= time_ago_in_words restaurant.created_at  %> ago</h5>
+
+      <p> <%= truncate(restaurant.description, { length: 140 }) %></p>
+      <div class='row review-box'>
+        <div class='col-md-4'>
+         <button class='show-reviews btn btn-danger'>Show reviews</button>
+        <div class='reviews'>
+          <% restaurant.reviews.each do |review| %>
+            <p>
+              <%= review.body %>
+              Rating: <%= star_rating review %>
+            </p>
+          <% end %>
+        </div>
+       </div>
+
+       <div class='col-md-8'>
+        <%= link_to 'Review', new_restaurant_review_path(restaurant) %>
+        <span class='admin'>
+        <%= link_to 'Edit', edit_restaurant_path(restaurant) %>
+        <%= link_to 'Delete', restaurant_path(restaurant), method: :delete, data: { confirm: "Are you sure?" } %>
+        </span>
+      </div>
+    </div>
+    </div>
+  </div>
+  <% end %>
+
+

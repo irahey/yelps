@@ -1,0 +1,31 @@
+<% if @review.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@review.errors.count, "error") %> this review cannot be saved because:</h2>
+    <ul>
+    <% @review.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for [@restaurant, @review] do |form| %>
+
+<%= form.label :name, 'Name' %>
+<%= form.text_field :name %>
+
+<br>
+<hr>
+
+<%= form.label :body, 'Review' %>
+<%= form.text_area :body %>
+
+<br>
+<hr>
+
+<%= form.label :ratings, 'Rating' %>
+<%= form.select :ratings, options_for_select(@review.valid_ratings) %>
+
+<%= form.submit 'submit' %>
+
+<% end %>

@@ -1,0 +1,24 @@
+>yelpdemo_ira
+    .Ericat yelp-clone: 
+        .https://github.com/Ericat/yelp-clone/blob/master/app/helpers/reviews_helper.rb
+    .do not create any user, establishment, review using console
+    .user: email, name, password, password_confirmation, city, avatar_url
+        .ref_to establishment, review
+    .session: view & controller only
+    .establishment: name, street address, city, province, postal code, phone, website
+        .ref_to review, category
+    .category: name
+        .ref_to: establishments
+    .review: title, rating, body
+        .ref_to: establishment, user
+    .use pagination
+    .arrange reviews from most recent to least
+    .add google map plugin
+    .use helpers
+    .upload establishments through webscraping (scrape then make csv, then upload)
+    GEMS
+    .bcrypt, devise, gravtastic, carrierwave, devise, geocoder
+    .check GEMS of Ericat yelp clone
+    TESTING
+    .read more here: https://ide.c9.io/irahey/notes
+    .GEM: factory_girl and factory_girl_rails
